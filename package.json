@@ -1,0 +1,20 @@
+{
+  "name": "flowxo",
+  "description": "flowxo bot scripts",
+  "repository": "https://github.com/SugarF0x/flowxo",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/lodash": "^4.14.182",
+    "clean-webpack-plugin": "^4.0.0",
+    "ts-loader": "^9.3.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
