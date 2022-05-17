@@ -3,9 +3,10 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "es5",
+    "strict": true,
     "moduleResolution": "node",
     "outDir": "dist",
-    "rootDir": ".",
+    "rootDir": "."
 
   },
   "lib": ["es2015"]
