@@ -4,7 +4,7 @@ function bold(val: string) { return `*${val}*` }
 function italic(val: string) { return `_${val}_` }
 function underline(val: string) { return `__${val}__` }
 
-function sanitize(val: string) { return val.replace(/[!\-]/g, '\\$&') }
+function sanitize(val: string) { return val.replace(/[!\-.]/g, '\\$&') }
 
 export function formatResponse(events: TransformedEvent[], specLocales: Specialties): string {
   if (!events.length) return sanitize('Сегодня пар нет!')
@@ -26,7 +26,7 @@ export function formatResponse(events: TransformedEvent[], specLocales: Specialt
     if (note) fields.push(bold('Примечание: ') + note)
 
     return fields.join('\n')
-  }, '').join('\n\n')
+  }, '').join('\n\n\n')
 
   return sanitize(result)
 }
