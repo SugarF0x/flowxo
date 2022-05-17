@@ -56,17 +56,17 @@ export interface Event extends Course {
   id: string
   subjectId: string
   groups: number[]
-  time: string
-  room: string
+  time?: string
+  room?: string
   note?: string
   dates: string[]
 }
 
 export interface TransformedEvent extends Course {
   id: string
-  room: string
+  room?: string
   groups: number[]
-  time: string
+  time?: string
   date: Date
   note?: string
   subject: Subject

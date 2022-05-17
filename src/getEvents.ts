@@ -2,7 +2,9 @@ import { FormattedSheets, TransformedEvent } from './types'
 import { DAYS_FORMAT } from './consts'
 import { endOfDay, parse, setHours, setMinutes } from 'date-fns'
 
-function applyTime(date: Date, time: string) {
+function applyTime(date: Date, time?: string) {
+  if (!time) return endOfDay(date)
+
   const [start] = time.split(' - ')
   if (isNaN(Number(start.replace(/:/g,'')))) return endOfDay(date)
 

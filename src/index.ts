@@ -17,7 +17,7 @@ async function main() {
 
   if (!todayEvents.length) resolve('Сегодня занятий нет!')
 
-  resolve(formatResponse(todayEvents))
+  resolve(formatResponse(todayEvents, parsedSheets.specialties))
 }
 
 main()

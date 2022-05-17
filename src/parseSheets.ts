@@ -30,10 +30,10 @@ export function parseSheets(sheets: Sheets) {
       note: replaceDashWithUndefined(entry.note),
       groups: entry.groups === '-' ? [1,2,3,4] : entry.groups.split(',').map(item => Number(item)),
       dates: parseDates(entry.dates),
+      room: replaceDashWithUndefined(room),
+      time: replaceDashWithUndefined(time),
       id,
       subjectId,
-      time,
-      room,
       course
     })
   }

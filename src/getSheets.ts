@@ -32,8 +32,8 @@ export function getItems(spreadsheetResponse: string) {
 }
 
 function request<T>(url: string): Promise<T> {
-  return new Promise<T>((success, fail) => {
-    utils.request<T>({ method: 'GET', url }, (error, response, body) => {
+  return new Promise((success, fail) => {
+    utils.request({ method: 'GET', url }, (error, response, body) => {
       if (error) fail(error)
       success(getItems(body))
     });
