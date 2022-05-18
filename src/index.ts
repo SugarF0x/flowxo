@@ -10,11 +10,11 @@ async function main() {
   const parsedSheets = parseSheets(sheets)
   const events = getEvents(parsedSheets)
 
-  const today = new Date()
+  const today = filter === 'tomorrow' ? new Date(Date.now() + 1000 * 60 * 60 * 24) : new Date()
 
   const todayEvents = events.filter((event) => {
-    if (filter === 'today') return isSameDay(event.date, today)
     if (filter === 'exam') return event.subject.id.includes('ex')
+    return isSameDay(event.date, today)
   }).sort((a, b) => (isBefore(a.date, b.date) ? -1 : 1)).map(entry => {
     if (filter !== 'exam') return entry
     return {
@@ -23,7 +23,7 @@ async function main() {
     }
   })
 
-  if (!todayEvents.length) resolve('Сегодня занятий нет!')
+  if (!todayEvents.length) resolve('Занятий нет')
 
   resolve(formatResponse(todayEvents, parsedSheets.specialties))
 }

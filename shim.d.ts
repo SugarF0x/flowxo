@@ -6,5 +6,5 @@ declare var reject: (msg: string) => never
 declare var resolve: (msg: string) => never
 
 declare var inputs: {
-  group: 'today' | 'exam'
+  group: 'today' | 'exam' | 'tomorrow'
 }
