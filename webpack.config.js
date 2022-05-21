@@ -2,7 +2,9 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: {
+    "omtu-fox": './src/bots/omtu-fox/index.ts'
+  },
   mode: "production",
   module: {
     rules: [
@@ -23,7 +25,7 @@ module.exports = {
     })
   ],
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
