@@ -1,8 +1,9 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
-  mode: "production",
+  mode: 'production',
   module: {
     rules: [
       {
@@ -19,6 +20,9 @@ module.exports = {
     new CleanWebpackPlugin({
       protectWebpackAssets: false,
       cleanAfterEveryBuildPatterns: ['*.LICENSE.txt'],
+    }),
+    new Dotenv({
+      path: './.env'
     })
   ],
   output: {

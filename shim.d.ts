@@ -8,3 +8,10 @@ declare var resolve: (msg: string) => never
 declare var inputs: {
   group: 'today' | 'exam' | 'tomorrow'
 }
+
+declare namespace NodeJS {
+  export interface ProcessEnv {
+    GOOGLE_SERVICE_ACCOUNT_EMAIL: string
+    GOOGLE_PRIVATE_KEY: string
+  }
+}
